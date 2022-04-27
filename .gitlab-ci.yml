@@ -1,0 +1,12 @@
+
+stages:
+  - build
+
+build:dkpswitch:
+  image: golang:1.18.1
+  stage: build
+  script:
+    - make build
+  artifacts:
+    paths:
+      - ./dkpswitch*
