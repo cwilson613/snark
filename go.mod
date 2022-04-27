@@ -1,4 +1,4 @@
-module github.com/cwilson613/dkpswitch
+module github.com/cwilson613/snark
 
 go 1.16
 
