@@ -8,17 +8,14 @@
 *.so
 *.dylib
 
-# Binaries
-dkpswitch-*
+# Binaries and build artifacts
+snark-*
 
 # Test binary, built with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
-# Hidden version file we write ourselves
-.dkp
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
