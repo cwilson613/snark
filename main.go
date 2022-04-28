@@ -54,6 +54,9 @@ func main() {
 			} else if argNum == 2 {
 				snarkString := os.Args[1]
 				makeSarcastic(snarkString)
+			} else if argNum == 3 {
+				snarkString := os.Args[2]
+				makeWallman(snarkString)
 			}
 		}
 
@@ -73,6 +76,14 @@ func makeSarcastic(text string) {
 			resultString += strings.ToUpper(string(c))
 		}
 	}
+	fmt.Println(resultString)
+	copyStringToClipboard(resultString)
+}
+
+func makeWallman(text string) {
+	resultString := ""
+	wallmanText := EmoteMap["wallman"].Text
+	resultString = strings.ReplaceAll(wallmanText, "<TEXT>", text)
 	fmt.Println(resultString)
 	copyStringToClipboard(resultString)
 }
@@ -101,7 +112,8 @@ func printDefaultUsage() {
 		// " snark help			provides help information\n" +
 		" snark list			list available emote names and values\n" +
 		" snark print <emote name>	print the value for arg emote name and copies it to the clipboard\n" +
-		" snark \"<string>\"		prints the given string in a sarcastic font of shIfTinG caPiTaLIsatIoN and copies to the clipboard")
+		" snark \"<string>\"		prints the given string in a sarcastic font of shIfTinG caPiTaLIsatIoN and copies to the clipboard\n" +
+		" snark wallman \"<string>\" prints the given string as if whispered shyly behind a wall")
 }
 
 func makeEmoteMap() map[string]Emote {
@@ -121,6 +133,25 @@ func makeEmoteMap() map[string]Emote {
 		"shock": {
 			"shock",
 			"ಠ_ಠ",
+		},
+		"wallman": {
+			"wallman",
+			`			 ┳┻|
+ 			 ┻┳|
+			 ┳┻|
+			 ┻┳|
+			 ┳┻|
+			 ┻┳|
+			 ┳┻|
+			 ┻┳|
+			 ┳┻|
+			 ┻┳|
+			 ┳┻|
+			 ┻┳|
+			 ┳┻| _
+			 ┻┳| •.•) <TEXT>
+			 ┳┻|⊂ﾉ
+			 ┻┳|`,
 		},
 	}
 	return emoteMap

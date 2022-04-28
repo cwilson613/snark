@@ -22,3 +22,6 @@ snark-*
 
 # Go workspace file
 go.work
+
+# User's Visual Studio directory
+.vscode/
